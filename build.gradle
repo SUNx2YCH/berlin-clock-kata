@@ -41,7 +41,9 @@ dependencies {
             'org.mockito:mockito-core:2.0.47-beta',
             'org.assertj:assertj-core:3.4.1',
             'commons-io:commons-io:2.4',
-            'org.jbehave:jbehave-core:4.0.5'
+            'org.jbehave:jbehave-core:4.0.5',
+            // https://github.com/Pragmatists/JUnitParams
+            'pl.pragmatists:JUnitParams:1.0.5'
 }
 
 buildscript {
