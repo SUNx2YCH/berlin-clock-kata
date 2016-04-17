@@ -17,32 +17,40 @@ One can be seen [here](https://en.wikipedia.org/wiki/Mengenlehreuhr#/media/File:
 ## Examples
 
 At 00:00:00 clock should look like
+```
 Y
 OOOO
 OOOO
 OOOOOOOOOOO
 OOOO
+```
 
 At 13:17:01 clock should look like
+```
 O
 RROO
 RRRO
 YYROOOOOOOO
 YYOO
+```
 
 At 23:59:59 clock should look like
+```
 O
 RRRR
 RRRO
 YYRYYRYYRYY
 YYYY
+```
 
 At 24:00:00 clock should look like
+```
 Y
 RRRR
 RRRR
 OOOOOOOOOOO
 OOOO
+```
 
 ## Your Task
 

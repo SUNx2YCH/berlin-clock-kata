@@ -22,7 +22,8 @@ import static org.jbehave.core.reporters.Format.CONSOLE;
 import static org.jbehave.core.reporters.Format.HTML;
 
 /**
- * A class to fully encapsulates all of the JBehave plumbing behind a builder style API. The expected usage for this would be:
+ * A class to fully encapsulates all of the JBehave plumbing behind a builder style API.
+ * The expected usage for this would be:
  * {@code aBehaviouralTestRunner().usingStepsFrom(this).withStory("your.story").run()}
  */
 public final class BehaviouralTestEmbedder extends ConfigurableEmbedder {
@@ -32,7 +33,6 @@ public final class BehaviouralTestEmbedder extends ConfigurableEmbedder {
 
     private String wildcardStoryFilename;
     private InjectableStepsFactory stepsFactory;
-
 
     private BehaviouralTestEmbedder() {
     }

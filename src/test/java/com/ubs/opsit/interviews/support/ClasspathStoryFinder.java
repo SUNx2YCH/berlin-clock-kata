@@ -17,10 +17,11 @@ import java.util.stream.Collectors;
 import static org.apache.commons.io.FileUtils.listFiles;
 
 /**
- * A class to help us find stories (files) across a classpath with many roots.  This is especially important
- * when finding files when executed from a Gradle test context.
+ * A class to help us find stories (files) across a classpath with many roots.
+ * This is especially important when finding files when executed from a Gradle test context.
  */
 public final class ClasspathStoryFinder {
+
     private static final Logger LOG = LoggerFactory.getLogger(ClasspathStoryFinder.class);
 
     private ClasspathStoryFinder() {
@@ -38,23 +39,23 @@ public final class ClasspathStoryFinder {
         List<File> rootDirsToSearchFrom = getRootDirs();
         LOG.debug("Searching for stories called {} in {}", aFilenameWithWildcards, rootDirsToSearchFrom);
 
-        List<File> ret = new ArrayList<>() ;
+        List<File> ret = new ArrayList<>();
         for (File file : rootDirsToSearchFrom) {
-            ret.addAll(listFiles(file, regexFileFilter, DirectoryFileFilter.DIRECTORY)) ;
+            ret.addAll(listFiles(file, regexFileFilter, DirectoryFileFilter.DIRECTORY));
         }
-        return ret ;
+        return ret;
     }
 
     private static List<File> getRootDirs() {
-        List<File> ret = new ArrayList<>() ;
+        List<File> ret = new ArrayList<>();
         try {
-            Enumeration<URL> roots = ClasspathStoryFinder.class.getClassLoader().getResources("") ;
-            while(roots.hasMoreElements()) {
-                ret.add(new File(roots.nextElement().getFile())) ;
+            Enumeration<URL> roots = ClasspathStoryFinder.class.getClassLoader().getResources("");
+            while (roots.hasMoreElements()) {
+                ret.add(new File(roots.nextElement().getFile()));
             }
-        } catch(IOException ioe) {
-            LOG.error("Failed to derive classpath from Class Loader", ioe) ;
+        } catch (IOException ioe) {
+            LOG.error("Failed to derive classpath from Class Loader", ioe);
         }
-        return ret ;
+        return ret;
     }
 }
