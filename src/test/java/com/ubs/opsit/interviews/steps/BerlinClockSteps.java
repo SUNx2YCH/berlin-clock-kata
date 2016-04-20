@@ -5,12 +5,14 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
 import com.ubs.opsit.interviews.TimeConverter;
+import com.ubs.opsit.interviews.berlinclock.BerlinClockConverter;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BerlinClockSteps {
 
-    private TimeConverter timeConverter;
+    // TODO Inject?
+    private TimeConverter timeConverter = new BerlinClockConverter();
     private String givenTime;
 
     @When("the time is <given_time>")
